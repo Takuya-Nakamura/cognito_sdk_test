@@ -1,0 +1,54 @@
+/**
+ * ナビゲーション共通スタイル
+ */
+
+/* メインナビゲーション */
+.main-navigation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+    border-right: 1px solid #dee2e6;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* ナビゲーションリスト */
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ナビゲーションリンク */
+.main-navigation a {
+    text-decoration: none;
+    color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    display: block;
+}
+
+/* アクティブなページのスタイル */
+.main-navigation a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* ホバー効果 */
+.main-navigation a:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+/* メインコンテンツのマージン調整 */
+body.has-navigation {
+    margin-left: 220px;
+    padding: 2rem;
+}

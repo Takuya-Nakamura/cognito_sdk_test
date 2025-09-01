@@ -10,28 +10,8 @@ function createNavigation(currentPage = '') {
   // ナビゲーションのHTML構造を作成
   const nav = document.createElement('nav');
   nav.className = 'main-navigation';
-  nav.style.cssText = `
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: #f8f9fa;
-    padding: 2rem 1rem;
-    border-right: 1px solid #dee2e6;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-  `;
 
   const navList = document.createElement('ul');
-  navList.style.cssText = `
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  `;
 
   // ナビゲーションアイテムの定義
   const navItems = [
@@ -47,32 +27,10 @@ function createNavigation(currentPage = '') {
     
     a.href = item.href;
     a.textContent = item.label;
-    a.style.cssText = `
-      text-decoration: none;
-      color: #007bff;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background-color 0.2s;
-    `;
 
-    // 現在のページの場合はスタイルを変更
+    // 現在のページの場合はactiveクラスを追加
     if (item.id === currentPage) {
-      a.style.cssText += `
-        background-color: #007bff;
-        color: white;
-      `;
-    } else {
-      // ホバー効果を追加
-      a.addEventListener('mouseenter', function() {
-        if (item.id !== currentPage) {
-          this.style.backgroundColor = '#e9ecef';
-        }
-      });
-      a.addEventListener('mouseleave', function() {
-        if (item.id !== currentPage) {
-          this.style.backgroundColor = 'transparent';
-        }
-      });
+      a.classList.add('active');
     }
 
     li.appendChild(a);
@@ -132,11 +90,11 @@ function initNavigation(currentPage) {
       body.appendChild(nav);
     }
     
-    // メインコンテンツが左側ナビゲーションに重ならないように左マージンを追加
-    body.style.marginLeft = '220px';
-    body.style.padding = '2rem';
+    // メインコンテンツが左側ナビゲーションに重ならないようにクラスを追加
+    body.classList.add('has-navigation');
   });
 }
 
-// 自動実行：ページ読み込み時に現在のページを判定してナビゲーションを初期化
+// main
 initNavigation(getCurrentPage());
+

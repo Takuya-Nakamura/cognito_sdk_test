@@ -1,3 +1,60 @@
+/**
+ * 共通スタイルシート
+ */
+
+/* ナビゲーション共通スタイル */
+/* メインナビゲーション */
+.main-navigation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+    border-right: 1px solid #dee2e6;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* ナビゲーションリスト */
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ナビゲーションリンク */
+.main-navigation a {
+    text-decoration: none;
+    color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    display: block;
+}
+
+/* アクティブなページのスタイル */
+.main-navigation a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* ホバー効果 */
+.main-navigation a:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+/* メインコンテンツのマージン調整 */
+body.has-navigation {
+    margin-left: 220px;
+    padding: 2rem;
+}
+
+/* フォーム共通スタイル */
 /* リセットとベーススタイル */
 * {
   margin: 0;
@@ -142,13 +199,22 @@ input::placeholder {
   font-size: 14px;
 }
 
-/* 新規登録ボタン */
+/* アカウント認証メッセージ */
+.activation-message {
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ボタン共通スタイル */
 .text-center {
   text-align: center;
   margin-top: 20px;
 }
 
-#user_add_btn {
+#user_add_btn, #activation_button {
   background: #3182ce;
   color: white;
   border: none;
@@ -159,7 +225,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-#user_add_btn:hover {
+#user_add_btn:hover, #activation_button:hover {
   background: #2c5282;
 }
 
@@ -188,7 +254,7 @@ input::placeholder {
     font-size: 15px;
   }
   
-  #user_add_btn {
+  #user_add_btn, #activation_button {
     padding: 12px 28px;
     font-size: 15px;
   }
