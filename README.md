@@ -6,6 +6,8 @@ SDKの操作サンプル用リポジトリ
 ## サーバー起動
 
 ```
+yarn install
+
 npm run dev
 or 
 npx http-server ./public -p 5300 -c-1 
