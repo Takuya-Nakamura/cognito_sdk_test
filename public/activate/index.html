@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>新規登録</title>
+    <title>アカウント認証</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./style.css" />
 
@@ -35,32 +35,36 @@
     
     <!-- 自作 -->
     <script src="./script.js"></script>
-
   </head>
   <body>
-    <!-- 新規登録フォーム -->
+    <!-- アカウント認証フォーム -->
     <div class="register-form">
-      <h1 class="page-title">新規登録</h1>
+      <h1 class="page-title">アカウント認証</h1>
+
+      <p class="activation-message">
+        検証コードを記載いただいたメールアドレスに送信しました。<br />確認の上、以下のフォームにご入力くださいませ。
+      </p>
 
       <div class="mb-4">
-        <label for="user_name">ユーザー名</label>
-        <input id="user_name" type="text" placeholder="ユーザー名" />
-      </div>
-
-      <div class="mb-4">
-        <label for="email">メールアドレス</label>
-        <input id="email" type="text" placeholder="メールアドレス" />
+        <label for="activation_email">メールアドレス</label>
+        <input id="activation_email" type="text" placeholder="メールアドレス" />
       </div>
 
       <div class="mb-6">
-        <label for="password">パスワード</label>
-        <input id="password" type="password" placeholder="******************" />
+        <label for="activation_code">検証コード</label>
+        <input 
+          id="activation_code" 
+          type="text" 
+          inputmode="numeric" 
+          pattern="\d*" 
+          placeholder="123456" 
+        />
       </div>
 
       <div class="text-center">
-        <button id="user_add_btn" type="button">新規登録</button>
+        <button id="activation_button" type="button">検証</button>
       </div>
     </div>
-
+    
   </body>
 </html>
