@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新規登録</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- jsbn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbn/1.1.0/jsbn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbn/1.1.0/jsbn2.min.js"></script>
+
+    <!-- SJCL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.min.js"></script>
+
+    <!-- CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+
+    <!-- AWS SDK v2 -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1692.0.min.js"></script>
+
+    <!-- Amazon Cognito  SDK -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1692.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@latest/dist/amazon-cognito-identity.min.js"></script>
+
+    <!-- 自作 -->
+    <script src="./script.js"></script>
+
+  </head>
+  <body>
+    <!-- 新規登録フォーム -->
+    <div class="register-form">
+      <h1 class="page-title">新規登録</h1>
+
+      <ul>
+        <li>
+          <a href=””>ログイン</a>
+        </li>
+        <li>
+          <a href="">新規登録</a>
+        </li>
+      </ul>
+
+      <div class="mb-4">
+        <label for="username">ユーザー名</label>
+        <input id="username" type="text" placeholder="ユーザー名" />
+      </div>
+
+      <div class="mb-4">
+        <label for="mailaddress">メールアドレス</label>
+        <input id="mailaddress" type="text" placeholder="メールアドレス" />
+      </div>
+
+      <div class="mb-6">
+        <label for="password">パスワード</label>
+        <input id="password" type="password" placeholder="******************" />
+      </div>
+
+      <div class="text-center">
+        <button id="user_add_btn" type="button">新規登録</button>
+      </div>
+    </div>
+
+
+  </body>
+</html>
