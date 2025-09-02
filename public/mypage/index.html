@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>マイページ</title>
+    <link rel="icon" href="data:," />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- jsbn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbn/1.1.0/jsbn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbn/1.1.0/jsbn2.min.js"></script>
+
+    <!-- SJCL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.min.js"></script>
+
+    <!-- CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+
+    <!-- AWS SDK v2 -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1692.0.min.js"></script>
+
+    <!-- Amazon Cognito  SDK -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1692.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@latest/dist/amazon-cognito-identity.min.js"></script>
+
+    <!-- 共通スタイル -->
+    <link rel="stylesheet" href="../common/style.css" />
+
+    <!-- 共通スクリプト -->
+    <script src="/common/scripts.js"></script>
+    <script src="/common/navi/navigation.js"></script>
+
+    <!-- 自作 -->
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <!-- マイページコンテンツ -->
+    <div class="register-form">
+      <h1 class="page-title">マイページ</h1>
+
+      <!-- ローディング表示 -->
+      <div id="loading" class="text-center">
+        <p>ユーザー情報を読み込み中...</p>
+      </div>
+
+      <!-- ログインしていない場合の表示 -->
+      <div id="not-logged-in" class="text-center" style="display: none">
+        <p>ログインしていません。</p>
+        <div class="links">
+          <a href="../sign_in/" class="resend-link">サインインはこちら</a>
+        </div>
+      </div>
+
+      <!-- ユーザー情報表示エリア -->
+      <div id="user-info" style="display: none">
+        <div class="mb-4">
+          <label>ユーザー名</label>
+          <div id="user-name" class="user-info-value">-</div>
+        </div>
+
+        <div class="mb-4">
+          <label>メールアドレス</label>
+          <div id="user-email" class="user-info-value">-</div>
+        </div>
+
+        <div class="mb-4">
+          <label>メール認証状態</label>
+          <div id="email-verified" class="user-info-value">-</div>
+        </div>
+
+        <div class="text-center">
+          <button id="logout-btn" type="button">ログアウト</button>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .user-info-value {
+        padding: 12px 16px;
+        background-color: #f8f9fa;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        color: #2d3748;
+        font-size: 16px;
+      }
+
+      #logout-btn {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 14px 32px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      #logout-btn:hover {
+        background: #c82333;
+      }
+    </style>
+  </body>
+</html>

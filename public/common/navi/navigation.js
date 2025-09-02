@@ -15,11 +15,13 @@ function createNavigation(currentPage = '') {
 
   // ナビゲーションアイテムの定義
   const navItems = [
-    { id: 'index', label: 'ホーム', href: getRelativePath(currentPage, '') },
-    { id: 'sign_in', label: 'サインイン', href: getRelativePath(currentPage, 'sign_in/') },
     { id: 'sign_up', label: '新規登録', href: getRelativePath(currentPage, 'sign_up/') },
+    { id: 'sign_in', label: 'サインイン', href: getRelativePath(currentPage, 'sign_in/') },
     { id: 'activate', label: 'メール認証', href: getRelativePath(currentPage, 'activate/') },
-    { id: 'resend', label: '認証コード再送', href: getRelativePath(currentPage, 'resend/') }
+    { id: 'resend', label: '認証コード再送', href: getRelativePath(currentPage, 'resend/') },
+    { id: 'mypage', label: 'マイページ', href: getRelativePath(currentPage, 'mypage/') },
+    { id: 'token_refresh', label: 'トークン管理', href: getRelativePath(currentPage, 'token_refresh/') },
+
   ];
 
   // ナビゲーションアイテムを作成
@@ -55,6 +57,8 @@ function getRelativePath(currentPage, targetPath) {
       return targetPath ? `./${targetPath}index.html` : './index.html';
     case 'sign_in':
     case 'sign_up':
+    case 'mypage':
+    case 'token_refresh':
     case 'activate':
     case 'resend':
       return targetPath === '' ? '../index.html' : `../${targetPath}index.html`;
@@ -73,6 +77,10 @@ function getCurrentPage() {
     return 'sign_in';
   } else if (path.includes('/sign_up/')) {
     return 'sign_up';
+  } else if (path.includes('/mypage/')) {
+    return 'mypage';
+  } else if (path.includes('/token_refresh/')) {
+    return 'token_refresh';
   } else if (path.includes('/activate/')) {
     return 'activate';
   } else if (path.includes('/resend/')) {
